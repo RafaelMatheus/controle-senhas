@@ -1,0 +1,40 @@
+<html>
+
+<head>
+<script type="text/javascript">
+//<[!CDATA[
+	function requisicaoGet() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+
+			if (this.readyState == 4 && this.status == 200) {
+				var json = JSON.parse(this.responseText);
+				document.getElementById("senhasAtual").innerHTML = json.senhaAtual;
+			}
+		};
+		xhttp.open("GET", "http://127.0.0.1:8080/senhas", true);
+		xhttp.send();
+		return this.responseText;
+	}
+	
+	
+	
+	//]]>
+</script>
+</head>
+
+<body>
+	<div id="senhasAtual">
+	</div>
+	<div id="novo"></div>
+	<form id="formularioSenhas" >
+		<input type="text" value="senhas atual">
+		<input type="submit">
+	</form>
+</body>
+
+<script>	
+requisicaoGet();
+
+</script>
+</html>
