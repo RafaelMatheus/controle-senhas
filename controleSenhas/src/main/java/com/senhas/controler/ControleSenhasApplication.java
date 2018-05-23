@@ -25,7 +25,7 @@ public class ControleSenhasApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		Index i1 = new Index(null, 0);
+		Index i1 = new Index(null, 1);
 		
 		
 		
